@@ -1,0 +1,58 @@
+﻿<!DOCTYPE.html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css/")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- Favicons -->
+    <link href="~/Content/img/favicon.png" rel="icon">
+    <link href="~/Content/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="~/Content/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="~/Content/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Content/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="~/Content/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="~/Content/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="~/Content/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="box-collapse">
+        <div class="title-box-d">
+            <h3 class="title-d">Search Property</h3>
+        </div>
+     @{ 
+         Html.RenderPartial("FormSearch");
+     }
+    @{ 
+        Html.RenderPartial("HeaderNavBar");
+    }
+    @RenderBody();
+    @{ 
+        Html.RenderPartial("Footer");
+    }
+   
+    <!-- JavaScript Libraries -->
+    <script src="~/Content/lib/jquery/jquery.min.js"></script>
+    <script src="~/Content/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="~/Content/lib/popper/popper.min.js"></script>
+    <script src="~/Content/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/lib/easing/easing.min.js"></script>
+    <script src="~/Content/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="~/Content/lib/scrollreveal/scrollreveal.min.js"></script>
+    <!-- Contact Form JavaScript File -->
+    
+
+    <!-- Template Main Javascript File -->
+    <script src="~/Content/js/main.js"></script>
+</body>
+<html>
