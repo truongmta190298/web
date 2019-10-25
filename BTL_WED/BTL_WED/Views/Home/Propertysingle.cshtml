@@ -1,7 +1,7 @@
 ﻿
 @using BTL_WED.Models.Emty;
 @using BTL_WED.Models.Function
-@model List<Nha>
+@model List<Image>
 <!--/ Intro Single star /-->
 <section class="intro-single">
     <div class="container">
@@ -37,15 +37,12 @@
         <div class="row">
             <div class="col-sm-12">
                 <div id="property-single-carousel" class="owl-carousel owl-arrow gallery-property">
-                    <div class="carousel-item-b">
-                        <img src="/Content/img/slide-2.jpg" alt="">
-                    </div>
-                    <div class="carousel-item-b">
-                        <img src="/Content/img/slide-3.jpg" alt="">
-                    </div>
-                    <div class="carousel-item-b">
-                        <img src="/Content/img/slide-1.jpg" alt="">
-                    </div>
+                    @foreach (Image it in Model)
+                    {
+                        <div class="carousel-item-b">
+                            <img class="house-image" src="/Content/img/@it.URL" alt="">
+                        </div>
+                    }
                 </div>
                 <div class="row justify-content-between">
                     <div class="col-md-5 col-lg-4">
@@ -55,62 +52,62 @@
                                     <span class="ion-money">$</span>
                                 </div>
                                 <div class="card-title-c align-self-center">
-                                    <h5 class="title-c">@ViewBag.ThongTinNha.GiaTien</h5>
+                                    <h5 class="title-c">@ViewBag.House.Price</h5>
                                 </div>
                             </div>
                         </div>
-                            <div class="property-summary">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="title-box-d section-t4">
-                                            <h3 class="title-d">Quick Summary</h3>
-                                        </div>
+                        <div class="property-summary">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="title-box-d section-t4">
+                                        <h3 class="title-d">Quick Summary</h3>
                                     </div>
                                 </div>
-                                
-                                <div class="summary-list">
+                            </div>
 
-                                    <ul class="list">
+                            <div class="summary-list">
 
-                                        <li class="d-flex justify-content-between">
-                                            <strong>Property ID:</strong>
-                                            <span>@ViewBag.ThongTinNha.MaNha</span>
-                                        </li>
-                                        <li class="d-flex justify-content-between">
-                                            <strong>Location:</strong>
-                                            <span>@ViewBag.ThongTinNha.DiaChi</span>
-                                        </li>
-                                        <li class="d-flex justify-content-between">
-                                            <strong>Property Type:</strong>
-                                            <span>@ViewBag.ThongTinNha.Loai</span>
-                                        </li>
-                                        <li class="d-flex justify-content-between">
-                                            <strong>Status:</strong>
-                                            <span>@ViewBag.ThongTinNha.trangthai</span>
-                                        </li>
-                                        <li class="d-flex justify-content-between">
-                                            <strong>Area:</strong>
-                                            <span>
-                                                @ViewBag.ThongTinNha.DienTich
-                                                <sup>2</sup>
-                                            </span>
-                                        </li>
-                                        <li class="d-flex justify-content-between">
-                                            <strong>Beds:</strong>
-                                            <span>@ViewBag.ThongTinNha.SoPhongNgu</span>
-                                        </li>
-                                        <li class="d-flex justify-content-between">
-                                            <strong>Baths:</strong>
-                                            <span>@ViewBag.ThongTinNha.SoPhongAn</span>
-                                        </li>
-                                        <li class="d-flex justify-content-between">
-                                            <strong>Garage:</strong>
-                                            <span>1</span>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <ul class="list">
+
+                                    <li class="d-flex justify-content-between">
+                                        <strong>Property ID:</strong>
+                                        <span>@ViewBag.House.HouseID</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between">
+                                        <strong>Location:</strong>
+                                        <span>@ViewBag.House.Location</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between">
+                                        <strong>Property Type:</strong>
+                                        <span>@ViewBag.House.PropertyType</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between">
+                                        <strong>Status:</strong>
+                                        <span>@ViewBag.House.C_Status</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between">
+                                        <strong>Area:</strong>
+                                        <span>
+                                            @ViewBag.House.Area
+                                            <sup>2</sup>
+                                        </span>
+                                    </li>
+                                    <li class="d-flex justify-content-between">
+                                        <strong>Beds:</strong>
+                                        <span>@ViewBag.House.Beds</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between">
+                                        <strong>Baths:</strong>
+                                        <span>@ViewBag.House.Baths</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between">
+                                        <strong>Garage:</strong>
+                                        <span>@ViewBag.House.Garage</span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
+                    </div>
                     <div class="col-md-7 col-lg-7 section-md-t3">
                         <div class="row">
                             <div class="col-sm-12">
@@ -121,7 +118,7 @@
                         </div>
                         <div class="property-description">
                             <p class="description color-text-a">
-                                @ViewBag.ThongTinNha.MoTaChiTiet
+                                @ViewBag.House.PropertyDescription
                             </p>
                         </div>
                         <div class="row section-t3">
@@ -186,32 +183,26 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6 col-lg-4">
-                        <img src="../Content/img/agent-4.jpg" alt="" class="img-fluid">
+                        <img src="/Content/img/@ViewBag.Host.Avatar" alt="" class="img-fluid">
                     </div>
                     <div class="col-md-6 col-lg-4">
                         <div class="property-agent">
-                            <h4 class="title-agent">Anabella Geller</h4>
-                            <p class="color-text-a">
-                                Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
-                                dui. Quisque velit nisi,
-                                pretium ut lacinia in, elementum id enim.
-                            </p>
                             <ul class="list-unstyled">
                                 <li class="d-flex justify-content-between">
-                                    <strong>Phone:</strong>
-                                    <span class="color-text-a">(222) 4568932</span>
+                                    <strong>Name:</strong>
+                                    <span class="color-text-a">@ViewBag.Host.HostName</span>
                                 </li>
                                 <li class="d-flex justify-content-between">
-                                    <strong>Mobile:</strong>
-                                    <span class="color-text-a">777 287 378 737</span>
+                                    <strong>Phone:</strong>
+                                    <span class="color-text-a">@ViewBag.Host.PhoneNumber</span>
                                 </li>
                                 <li class="d-flex justify-content-between">
                                     <strong>Email:</strong>
-                                    <span class="color-text-a">annabella@example.com</span>
+                                    <span class="color-text-a">@ViewBag.Host.Email</span>
                                 </li>
                                 <li class="d-flex justify-content-between">
-                                    <strong>Skype:</strong>
-                                    <span class="color-text-a">Annabela.ge</span>
+                                    <strong>Address</strong>
+                                    <span class="color-text-a">@ViewBag.Host.Address</span>
                                 </li>
                             </ul>
                             <div class="socials-a">
@@ -247,41 +238,103 @@
                     </div>
                     <div class="col-md-12 col-lg-4">
                         <div class="property-contact">
-                            <form class="form-a">
-                                <div class="row">
-                                    <div class="col-md-12 mb-1">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control form-control-lg form-control-a" id="inputName"
-                                                   placeholder="Name *" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 mb-1">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control form-control-lg form-control-a" id="inputEmail1"
-                                                   placeholder="Email *" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 mb-1">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control form-control-lg form-control-a" id="inputEmail1"
-                                                   placeholder="Number" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 mb-1">
-                                        <div class="form-group">
-                                            <textarea id="textMessage" class="form-control" placeholder="Comment *" name="message" cols="45"
-                                                      rows="8" required></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <button type="submit" class="btn btn-a">Send Message</button>
-                                    </div>
-                                </div>
-                            </form>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="col-md-10 offset-md-1 col-lg-10 offset-lg-1">
+        <div class="title-box-d">
+            <h3 class="title-d">Comments (4)</h3>
+        </div>
+        <div class="box-comments">
+            <ul class="list-comments">
+                <li>
+                    <div class="comment-avatar">
+                        <img src="../Content/img/author-2.jpg" alt="">
+                    </div>
+                    <div class="comment-details">
+                        <h4 class="comment-author">Emma Stone</h4>
+                        <span>18 Sep 2017</span>
+                        <p class="comment-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
+                            ipsam temporibus maiores
+                            quae natus libero optio, at qui beatae ducimus placeat debitis voluptates amet corporis.
+                        </p>
+                        <a href="3">Reply</a>
+                    </div>
+                </li>
+                <li class="comment-children">
+                    <div class="comment-avatar">
+                        <img src="../Content/img/author-1.jpg" alt="">
+                    </div>
+                    <div class="comment-details">
+                        <h4 class="comment-author">Oliver Colmenares</h4>
+                        <span>18 Sep 2017</span>
+                        <p class="comment-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
+                            ipsam temporibus maiores
+                            quae.
+                        </p>
+                        <a href="3">Reply</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="comment-avatar">
+                        <img src="../Content/img/author-2.jpg" alt="">
+                    </div>
+                    <div class="comment-details">
+                        <h4 class="comment-author">Emma Stone</h4>
+                        <span>18 Sep 2017</span>
+                        <p class="comment-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
+                            ipsam temporibus maiores
+                            quae natus libero optio.
+                        </p>
+                        <a href="3">Reply</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="form-comments">
+            <div class="title-box-d">
+                <h3 class="title-d"> Leave a Reply</h3>
+            </div>
+            <form class="form-a">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                            <label for="inputName">Enter name</label>
+                            <input type="text" class="form-control form-control-lg form-control-a" id="inputName" placeholder="Name *"
+                                   required>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                            <label for="inputEmail1">Enter email</label>
+                            <input type="email" class="form-control form-control-lg form-control-a" id="inputEmail1"
+                                   placeholder="Email *" required>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                            <label for="inputUrl">Enter website</label>
+                            <input type="url" class="form-control form-control-lg form-control-a" id="inputUrl" placeholder="Website">
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                            <label for="textMessage">Enter message</label>
+                            <textarea id="textMessage" class="form-control" placeholder="Comment *" name="message" cols="45"
+                                      rows="8" required></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-a">Comment</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </section>

@@ -67,20 +67,22 @@ namespace BTL_WED.Controllers
 
             return View();
         }
+
         public ActionResult Propertygrid()
         {
 
-            var model = new F_Image().DS_Image.ToList();
-            ViewBag.House = new F_House();
-
+            var model = new F_House().DS_House.ToList();
+            ViewBag.Image = new F_Image();
             return View(model);
         }
         public ActionResult Propertysingle(int id)
         {
+            var model = new F_Image().GetImageHouse(id);
             F_House House = new F_House();
-            ViewBag.PropertyDescription = House.FindEntity(id);
-
-            return View();
+            F_Host Host = new F_Host();
+            ViewBag.House = House.FindEntity(id);
+            ViewBag.Host = Host.FindEntity(id);
+            return View(model);
         }
     }
 }

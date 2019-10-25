@@ -131,7 +131,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\C_Propertygrid.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProfileHouse.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -157,6 +159,51 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\AvatarHouse1.jpg" />
+    <Content Include="Content\img\AvatarHouse2.jpg" />
+    <Content Include="Content\img\AvatarHouse3.jpg" />
+    <Content Include="Content\img\AvatarHouse4.jpg" />
+    <Content Include="Content\img\AvatarHouse5.jpg" />
+    <Content Include="Content\img\AvatarHouse6.jpg" />
+    <Content Include="Content\img\AvatarHouse7.jpg" />
+    <Content Include="Content\img\AvatarHouse8.jpg" />
+    <Content Include="Content\img\AvatarHouse9.jpg" />
+    <Content Include="Content\img\House1.1.jpg" />
+    <Content Include="Content\img\House1.2.jpg" />
+    <Content Include="Content\img\House1.3.jpg" />
+    <Content Include="Content\img\House1.png" />
+    <Content Include="Content\img\House2.1.jpg" />
+    <Content Include="Content\img\House2.2.jpg" />
+    <Content Include="Content\img\House2.3.jpg" />
+    <Content Include="Content\img\House2.png" />
+    <Content Include="Content\img\House3.1.jpg" />
+    <Content Include="Content\img\House3.2.jpg" />
+    <Content Include="Content\img\House3.3.jpg" />
+    <Content Include="Content\img\House3.png" />
+    <Content Include="Content\img\House4.1.jpg" />
+    <Content Include="Content\img\House4.2.jpg" />
+    <Content Include="Content\img\House4.3.jpg" />
+    <Content Include="Content\img\House4.png" />
+    <Content Include="Content\img\House5.1.jpg" />
+    <Content Include="Content\img\House5.2.jpg" />
+    <Content Include="Content\img\House5.3.jpg" />
+    <Content Include="Content\img\House5.png" />
+    <Content Include="Content\img\House6.1.jpg" />
+    <Content Include="Content\img\House6.2.jpg" />
+    <Content Include="Content\img\House6.3.jpg" />
+    <Content Include="Content\img\House6.png" />
+    <Content Include="Content\img\House7.1.jpg" />
+    <Content Include="Content\img\House7.2.jpg" />
+    <Content Include="Content\img\House7.3.jpg" />
+    <Content Include="Content\img\House7.png" />
+    <Content Include="Content\img\House8.1.jpg" />
+    <Content Include="Content\img\House8.2.jpg" />
+    <Content Include="Content\img\House8.3.jpg" />
+    <Content Include="Content\img\House8.png" />
+    <Content Include="Content\img\House9.1.jpg" />
+    <Content Include="Content\img\House9.2.jpg" />
+    <Content Include="Content\img\House9.3.jpg" />
+    <Content Include="Content\img\House9.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -324,6 +371,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Propertysingle\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

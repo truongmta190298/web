@@ -23,6 +23,16 @@ namespace BTL_WED.Models.Function
             Image dbEntry = context.Images.Find(Ma);
             return dbEntry;
         }
+        //Trả về list ảnh theo mã nhà
+        public List<Image> GetImageHouse(int? HouseID)
+        {
+            var list =
+            (
+                 from b in context.Images
+                 where b.HouseID == HouseID
+                 select b).ToList();
+            return list;
+        }
         //Thêm một đối tượng
         public int? Insert(Image model)
         {
