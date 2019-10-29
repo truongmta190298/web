@@ -3,9 +3,6 @@
 }
 @using BTL_WED.Models.Emty;
 @using BTL_WED.Models.Function
-@{ 
-    Image Image1 = new Image();
-}
 @model List<House>
 
 
@@ -53,11 +50,10 @@
             </div>
             @foreach (House it in Model)
             {
-               Image1 = ViewBag.Image.FindEntity(it.HouseID);
-               <div class="col-md-4">
+                <div class="col-md-4">
                     <div class="card-box-a card-shadow">
                         <div class="img-box-a">
-                            <img src="../Content/img/@Image1.URL" alt="" class="img-a img-fluid">
+                            <img src="~/Content/img/@it.Avatar" alt="" class="img-a img-fluid">
                         </div>
                         <div class="card-overlay">
                             <div class="card-overlay-a-content">

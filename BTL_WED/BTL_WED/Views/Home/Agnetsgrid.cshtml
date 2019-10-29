@@ -1,10 +1,7 @@
-﻿
-@{
-    ViewBag.Title = "Agnetsgrid";
-}
+﻿@ViewBag.Title = "Agnetsgrid";
 @using BTL_WED.Models.Emty;
 @using BTL_WED.Models.Function
-@model List<ChuNha>
+@model List<Host>
 <!--/ Intro Single star /-->
 <section class="intro-single">
     <div class="container">
@@ -35,70 +32,70 @@
 <section class="agents-grid grid">
     <div class="container">
         <div class="row">
-            @foreach(ChuNha it in Model){
-            <div class="col-md-4">
-                <div class="card-box-d">
-                    <div class="card-img-d">
-                        <img src="../Content/img/@it.Anh" alt="" class="img-d img-fluid">
-                    </div>
-                    <div class="card-overlay card-overlay-hover">
-                        <div class="card-header-d">
-                            <div class="card-title-d align-self-center">
-                                <h3 class="title-d">
-                                    <a href="#" class="link-two">
-                                        @it.HoTen
-                                        <br> Escala
-                                    </a>
-                                </h3>
-                            </div>
+            @foreach (Host it in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card-box-d">
+                        <div class="card-img-d">
+                            <img src="../Content/img/@it.Avatar" alt="" class="img-d img-fluid">
                         </div>
-                        <div class="card-body-d">
-                            <p class="content-d color-text-a">
-                                @it.DiaChi
-                            </p>
-                            <div class="info-agents color-a">
-                                <p>
-                                    <strong>Phone: </strong> @it.SoDienThoai
-                                </p>
-                                <p>
-                                    <strong>Email: </strong> @it.Email
-                                </p>
+                        <div class="card-overlay card-overlay-hover">
+                            <div class="card-header-d">
+                                <div class="card-title-d align-self-center">
+                                    <h3 class="title-d">
+                                        <a href="#" class="link-two">
+                                            @it.HostName
+                                        </a>
+                                    </h3>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-footer-d">
-                            <div class="socials-footer d-flex justify-content-center">
-                                <ul class="list-inline">
-                                    <li class="list-inline-item">
-                                        <a href="#" class="link-one">
-                                            <i class="fa fa-facebook" aria-hidden="true"></i>
-                                        </a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#" class="link-one">
-                                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                                        </a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#" class="link-one">
-                                            <i class="fa fa-instagram" aria-hidden="true"></i>
-                                        </a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#" class="link-one">
-                                            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
-                                        </a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#" class="link-one">
-                                            <i class="fa fa-dribbble" aria-hidden="true"></i>
-                                        </a>
-                                    </li>
-                                </ul>
+                            <div class="card-body-d">
+                                <p class="content-d color-text-a">
+                                    @it.Address
+                                </p>
+                                <div class="info-agents color-a">
+                                    <p>
+                                        <strong>Phone: </strong> @it.PhoneNumber
+                                    </p>
+                                    <p>
+                                        <strong>Email: </strong> @it.Email
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-footer-d">
+                                <div class="socials-footer d-flex justify-content-center">
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a href="#" class="link-one">
+                                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="#" class="link-one">
+                                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="#" class="link-one">
+                                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="#" class="link-one">
+                                                <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="#" class="link-one">
+                                                <i class="fa fa-dribbble" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             }
         </div>
         <div class="row">

@@ -11,8 +11,7 @@ namespace BTL_WED.Controllers
     {
         public ActionResult Index()
         {
-            var model = new F_Image().DS_Image.ToList();
-            ViewBag.House = new F_House();
+            var model = new F_House().DS_House.ToList();
             ViewBag.Host = new F_Host().DS_Host.ToList();
             return View(model);
         }
@@ -45,7 +44,6 @@ namespace BTL_WED.Controllers
         public ActionResult Agnetsgrid()
         {
             var model = new F_Host().DS_Host.ToList();
-            ViewBag.House = new F_Host();
 
             return View(model);
         }
@@ -55,24 +53,11 @@ namespace BTL_WED.Controllers
 
             return View();
         }
-        public ActionResult Bloggrid()
-        {
-            ViewBag.Message = "Your Bloggrid page.";
-
-            return View();
-        }
-        public ActionResult Blogsingle()
-        {
-            ViewBag.Message = "Your Blogsingle page.";
-
-            return View();
-        }
 
         public ActionResult Propertygrid()
         {
 
             var model = new F_House().DS_House.ToList();
-            ViewBag.Image = new F_Image();
             return View(model);
         }
         public ActionResult Propertysingle(int id)
