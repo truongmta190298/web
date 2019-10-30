@@ -985,6 +985,7 @@ a:hover {
 .card-box-d {
   position: relative;
   overflow: hidden;
+  margin-bottom:2.5rem;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
@@ -2022,4 +2023,7 @@ footer .credits {
   .box-collapse .title-box-d .title-d {
     font-size: 1.3rem;
   }
+}
+.truong{
+    margin-bottom:2.5rem;
 }
