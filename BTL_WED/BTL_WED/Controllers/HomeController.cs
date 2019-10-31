@@ -29,10 +29,9 @@ namespace BTL_WED.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult SendMessage(int id , string name, string phone, string email, string message)
+        public ActionResult SendMessage(string name, string phone, string email, string message)
         {
             var Customer = new Customer();
-            Customer.CustomerID = id;
             Customer.Name = name;
             Customer.Email = email;
             Customer.PhoneNumber = phone;
@@ -47,10 +46,10 @@ namespace BTL_WED.Controllers
 
             return View(model);
         }
-        public ActionResult Agnetsingle()
+        public ActionResult Agnetsingle(int id)
         {
-            ViewBag.Message = "Your Agnetsingle page.";
-
+            F_Host Host = new F_Host();
+            ViewBag.Host = Host.FindEntity(id);
             return View();
         }
 
