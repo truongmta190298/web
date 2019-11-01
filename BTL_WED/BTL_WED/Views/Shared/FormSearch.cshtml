@@ -1,18 +1,18 @@
 ﻿<!--/ Form Search Star /-->
 <span class="close-box-collapse right-boxed ion-ios-close"></span>
 <div class="box-collapse-wrap form">
-    <form class="form-a">
+    <form class="form-a" method="post" action="/Home/F_Search">
         <div class="row">
             <div class="col-md-12 mb-2">
                 <div class="form-group">
                     <label for="Type">Keyword</label>
-                    <input type="text" class="form-control form-control-lg form-control-a" placeholder="Keyword">
+                    <input type="text" name="Keyword" class="form-control form-control-lg form-control-a" placeholder="Keyword">
                 </div>
             </div>
             <div class="col-md-6 mb-2">
                 <div class="form-group">
                     <label for="Type">Type</label>
-                    <select class="form-control form-control-lg form-control-a" id="Type">
+                    <select name="Type" class="form-control form-control-lg form-control-a" id="Type">
                         <option>All Type</option>
                         <option>For Rent</option>
                         <option>For Sale</option>
@@ -23,7 +23,7 @@
             <div class="col-md-6 mb-2">
                 <div class="form-group">
                     <label for="city">City</label>
-                    <select class="form-control form-control-lg form-control-a" id="city">
+                    <select name="City" class="form-control form-control-lg form-control-a" id="city">
                         <option>All City</option>
                         <option>Alabama</option>
                         <option>Arizona</option>
@@ -35,7 +35,7 @@
             <div class="col-md-6 mb-2">
                 <div class="form-group">
                     <label for="bedrooms">Bedrooms</label>
-                    <select class="form-control form-control-lg form-control-a" id="bedrooms">
+                    <select name="Bedrooms" class="form-control form-control-lg form-control-a" id="bedrooms">
                         <option>Any</option>
                         <option>01</option>
                         <option>02</option>
@@ -46,7 +46,7 @@
             <div class="col-md-6 mb-2">
                 <div class="form-group">
                     <label for="garages">Garages</label>
-                    <select class="form-control form-control-lg form-control-a" id="garages">
+                    <select name="Garages" class="form-control form-control-lg form-control-a" id="garages">
                         <option>Any</option>
                         <option>01</option>
                         <option>02</option>
@@ -58,7 +58,7 @@
             <div class="col-md-6 mb-2">
                 <div class="form-group">
                     <label for="bathrooms">Bathrooms</label>
-                    <select class="form-control form-control-lg form-control-a" id="bathrooms">
+                    <select name="Bathrooms" class="form-control form-control-lg form-control-a" id="bathrooms">
                         <option>Any</option>
                         <option>01</option>
                         <option>02</option>
@@ -69,12 +69,12 @@
             <div class="col-md-6 mb-2">
                 <div class="form-group">
                     <label for="price">Min Price</label>
-                    <select class="form-control form-control-lg form-control-a" id="price">
+                    <select name="Price" class="form-control form-control-lg form-control-a" id="price">
                         <option>Unlimite</option>
-                        <option>$50,000</option>
-                        <option>$100,000</option>
-                        <option>$150,000</option>
-                        <option>$200,000</option>
+                        <option>Below $100,000</option>
+                        <option>$100,000 - $250,000</option>
+                        <option>$250,000 - $500,000</option>
+                        <option>Over $500,000</option>
                     </select>
                 </div>
             </div>
