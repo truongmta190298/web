@@ -15,17 +15,8 @@ namespace BTL_WED.Controllers
             ViewBag.Host = new F_Host().DS_Host.ToList();
             return View(model);
         }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-            return View();
-        }
-
         public ActionResult Contact()
         {
-
-
             return View();
         }
         [HttpPost]
@@ -48,14 +39,14 @@ namespace BTL_WED.Controllers
         }
         public ActionResult Agnetsingle(int id)
         {
+            var model = new F_House().DS_House.ToList();
             F_Host Host = new F_Host();
             ViewBag.Host = Host.FindEntity(id);
-            return View();
+            return View(model);
         }
 
         public ActionResult Propertygrid()
         {
-
             var model = new F_House().DS_House.ToList();
             return View(model);
         }
