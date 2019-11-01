@@ -1,0 +1,43 @@
+﻿@using BTL_WED.Models.Emty
+@model List<Host>
+@{
+    ViewBag.Title = "ShowAll";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered dataTable table-hover" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+    <thead>
+        <tr role="row">
+            <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 50px;">Password</th>
+            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending" style="width: 50px;">Email</th>
+            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="PhoneNumber: activate to sort column ascending" style="width: 50px;">PhoneNumber</th>
+            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Address: activate to sort column ascending" style="width: 50px;">Address</th>
+            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Action: activate to sort column ascending" style="width: 50px;">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var account in Model)
+        {
+        <tr role="row" class="odd table-hover active">
+            <td class="sorting_1">@account.HostName</td>
+            <td class="sorting_1">@account.Email</td>
+            <td class="sorting_1">@account.PhoneNumber</td>
+            <td class="sorting_1">@account.Address</td>
+            <td>
+                <a href="/Admin/Host/Delete/@account.HostID" class="btn btn-circle btn-danger">
+                    <i class="fas fa-trash"></i>
+                </a>
+                <a href="/Admin/Host/Change/@account.HostID" class="btn btn-circle btn-warning">
+                    <i class="fas fa-tools"></i>
+                </a>
+                <a href="/Admin/Host/ListHouse/@account.HostID" class="btn btn-circle btn-success">
+                    <i class="fas fa-home"></i>
+                </a>
+
+
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

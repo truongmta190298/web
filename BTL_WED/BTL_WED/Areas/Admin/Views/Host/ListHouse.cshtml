@@ -1,0 +1,53 @@
+﻿@using BTL_WED.Models.Emty
+@model List<House>
+@{
+    ViewBag.Title = "ListHouse";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered dataTable table-hover" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+    <thead>
+        <tr role="row">
+            <th class="sorting_asc" tabindex="0" style="width: 50px;">Avatar</th>
+            <th class="sorting" tabindex="0"  style="width: 50px;">Location</th>
+            <th class="sorting" tabindex="0"  style="width: 50px;">PropertyType</th>
+            <th class="sorting" tabindex="0"  style="width: 50px;">Status</th>
+            <th class="sorting" tabindex="0" style="width: 50px;">Area</th>
+            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Beds: activate to sort column ascending" style="width: 50px;">Beds</th>
+            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Baths: activate to sort column ascending" style="width: 50px;">Baths</th>
+            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Price: activate to sort column ascending" style="width: 50px;">Price</th>
+            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Action: activate to sort column ascending" style="width: 50px;">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var account in Model)
+        {
+        <tr role="row" class="odd table-hover active">
+            <td class="sorting_1">@account.Avatar</td>
+            <td class="sorting_1">@account.Location</td>
+            <td class="sorting_1">@account.PropertyType</td>
+            <td class="sorting_1">@account.C_Status</td>
+            <td class="sorting_1">@account.Area</td>
+            <td class="sorting_1">@account.Beds</td>
+            <td class="sorting_1">@account.Baths</td>
+            <td class="sorting_1">@account.Price</td>
+            <td>
+                <a href="/Admin/Host/Delete/@account.HostID" class="btn btn-circle btn-danger">
+                    <i class="fas fa-trash"></i>
+                </a>
+                <br />
+                <a href="/Admin/Host/Change/@account.HostID" class="btn btn-circle btn-warning">
+                    <i class="fas fa-tools"></i>
+                </a>
+                <br />
+                <a href="/Admin/Host/ListHouse/@account.HostID" class="btn btn-circle btn-success">
+                    <i class="fas fa-home"></i>
+                </a>
+
+
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

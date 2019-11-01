@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "ControlAdmin";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div >
+    <form action="/Admin/Main/ReturnAdmin" method="post">
+        <div class="form-group" style="margin-left:30%">
+            <div style="margin:auto">
+                @Html.ValidationSummary(false, "", "error")
+                <label>Username</label>
+                <input type="text" class="form-control form-control-user" style="width:30%" name="UserName" />
+            </div>
+            <div>
+                <label>Password</label>
+                <input type="text" name="Pass" class="form-control form-control-user form-group" style="width:30%;"/>
+            </div>
+            <input type="submit" value="Add account" class="btn btn-primary btn-icon-split"/>
+        </div>        
+    </form>
+</div>
+

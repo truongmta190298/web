@@ -81,13 +81,6 @@ namespace BTL_WED.Controllers
             ViewBag.Host = new F_Host().DS_Host.ToList();
             return View("Index",temp);
         }
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-            return View();
-        }
-
-
         public ActionResult Contact()
         {
             return View();
@@ -107,12 +100,11 @@ namespace BTL_WED.Controllers
         public ActionResult Agnetsgrid()
         {
             var model = new F_Host().DS_Host.ToList();
-
             return View(model);
         }
         public ActionResult Agnetsingle(int id)
         {
-            var model = new F_House().DS_House.ToList();
+            var model = new F_House().DS_House.Where(x => x.HostID.Value == id).ToList();
             F_Host Host = new F_Host();
             ViewBag.Host = Host.FindEntity(id);
             return View(model);
@@ -125,11 +117,11 @@ namespace BTL_WED.Controllers
         }
         public ActionResult Propertysingle(int id)
         {
-            var model = new F_Image().GetImageHouse(id);
             F_House House = new F_House();
             F_Host Host = new F_Host();
             ViewBag.House = House.FindEntity(id);
             ViewBag.Host = Host.FindEntity(id);
+            var model = new F_Image().DS_Image.Where(x=>x.HouseID.Value==id).ToList();   
             return View(model);
         }
     }
